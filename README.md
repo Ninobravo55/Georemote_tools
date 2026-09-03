@@ -148,7 +148,7 @@ Si prefieres realizar la instalación manualmente:
 El código está estructurado de manera modular y limpia para facilitar su escalabilidad:
 
 ```text
-GeomaticaPe/
+Georemotes/
 ├── Icons/                     # Recursos visuales e íconos del complemento
 ├── Script/                    # Núcleo de las herramientas y algoritmos
 │   ├── _modis_core.py         # Funciones base para el sensor MODIS
