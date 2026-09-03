@@ -1,4 +1,4 @@
-# Geomaticape Tools 🛰️📐
+# GeoRemote Tools 🛰️📐
 
 [![QGIS Version](https://img.shields.io/badge/QGIS-3.28%20--%204.99-blue.svg?logo=qgis&logoColor=white&color=589632)](https://qgis.org/)
 [![Python Version](https://img.shields.io/badge/Python-3.9%2B-blue.svg?logo=python&logoColor=white&color=3776AB)](https://www.python.org/)
