@@ -16,7 +16,7 @@ El complemento organiza sus herramientas en menús lógicos y optimizados para e
 
 ```mermaid
 graph TD
-    A[Geomaticape Tools] --> B(Conversión y Calibración)
+    A[Georemotes Tools] --> B(Conversión y Calibración)
     A --> C(Procesamiento Satelital)
     A --> D(Post-Procesamiento)
     A --> E(Geoprocesamiento)
