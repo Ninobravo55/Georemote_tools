@@ -6,7 +6,7 @@
 [![Website](https://img.shields.io/badge/Website-geomatica.pe-darkgreen.svg?logo=internet-explorer&logoColor=white)](https://www.geomatica.pe/)
 [![Developer](https://img.shields.io/badge/Contacto-nino%40geomatica.pe-orange.svg?logo=gmail&logoColor=white)](mailto:nino@geomatica.pe)
 
-**Geomaticape Tools** es un complemento (*plugin*) profesional y de alto rendimiento para **QGIS**, desarrollado por **Geomatica Ambiental**. Está diseñado para automatizar el procesamiento, análisis espacial y modelamiento de imágenes satelitales multiespectrales, facilitando tareas complejas de teledetección, machine learning y geoprocesamiento vectorial en un entorno unificado y optimizado.
+**Georemotes Tools** es un complemento (*plugin*) profesional y de alto rendimiento para **QGIS**, desarrollado por **Geomatica Ambiental**. Está diseñado para automatizar el procesamiento, análisis espacial y modelamiento de imágenes satelitales multiespectrales, facilitando tareas complejas de teledetección, machine learning y geoprocesamiento vectorial en un entorno unificado y optimizado.
 
 ---
 
