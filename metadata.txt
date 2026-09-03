@@ -1,0 +1,136 @@
+[general]
+name=GeoRemote Tools
+description=Landsat C2 L1/L2, Sentinel-2, CBERS-04A, MODIS 09/11/12/13 scale factor per product independently, PCA, spectral indices, supervised + unsupervised classification, band extraction, vector geoprocessing, zonal statistics and multi-point sampling
+version=1.14.0
+qgisMinimumVersion=3.28
+qgisMaximumVersion=4.99
+author=Geomatica Ambiental
+email=nino@geomatica.pe
+authorUrl=https://www.geomatica.pe/
+
+about=GeoRemote Tools is a QGIS plugin developed by Geomatica Ambiental to automate
+    preprocessing and analysis of multispectral satellite imagery and to
+    support common geoprocessing tasks.
+
+    Tools organized into 7 groups:
+
+    [Conversion]
+    - Factor Escala LandSat C2 L1 (SR + LST + PAN)
+    - Factor escala Landsat C2 L2 (SR + LST)
+    - Factor de escala Sentinel-2 L1C (10m)
+    - Factor de escala Sentinel-2 L2A (10m)
+    - Factor escala MODIS 09 (Reflectancia Superficial)
+    - Factor escala MODIS 11 (LST C)
+    - Factor escala MODIS 12 (Cobertura del Suelo)
+    - Factor escala MODIS 13 (NDVI / EVI)
+
+    [Procesamiento]
+    - ACP Multiespectral (cualquier satelite)
+    - CBERS-04A Pansharpening Brovey 2m
+    - Clasificacion no supervisada (K-Means / GMM / ISODATA / Birch)
+    - Clasificacion supervisada y validacion
+    - Definir celdas nulas
+    - Extraer bandas de imagenes multiespectrales
+    - Firma espectral (Landsat 5/7/8/9 / Sentinel-2 / ASTER)
+    - Indices espectrales (NDVI, SAVI, EVI, NDWI, NBR, NDSI...)
+    - Indices espectrales - Seleccion multiple (varios indices -> carpeta)
+    - Mosaico de imagenes
+    - Reproyectar raster
+    - Tasseled Cap (Brightness / Greenness / Wetness)
+
+    [PostProcesamiento]
+    - Clasificar raster por rangos
+    - Reclasificar raster (remapeo de valores)
+    - Reporte clasificacion vectorial (area y graficos)
+    - Reporte de clasificacion raster (area, porcentaje, estadisticas)
+
+    [Geoprocesamiento]
+    - Calcular angulo de poligono
+    - Crear poligonos a partir de tabla
+    - Estadistica zonal raster (Excel/CSV)
+    - Extraer valores puntuales de multiples raster
+    - Poligono superpuesto propio
+    - Secciones transversales
+
+    [Descarga GEE]
+    - Descargar imagenes Landsat / Sentinel-2
+    - Descargar indices espectrales (GEE)
+    - Firma espectral profesional (GEE)
+
+    [MDE]
+    - Descargar MDE
+    - Generar curvas de nivel intermedias
+    - Generar elevaciones puntuales
+
+
+
+    COMPATIBILITY:
+    - Qt5 (PyQt5) and Qt6 (PyQt6) via qgis.PyQt compatibility layer
+    - QGIS 3.28 to 4.99
+
+    REQUIREMENTS - Python modules bundled with QGIS (no installation needed):
+    - numpy           (all tools)
+    - GDAL / osgeo    (all tools)
+    - matplotlib      (QGIS LTR 3.22+; supervised_classification, pca_satellite)
+
+    REQUIREMENTS - External modules NOT bundled with QGIS (must install):
+    - scikit-learn    REQUIRED by: Unsupervised Classification (KMeans,
+                      MiniBatchKMeans, GaussianMixture, Birch, StandardScaler),
+                      Supervised Classification (DecisionTree, RandomForest,
+                      NaiveBayes, MLP, KNN, train_test_split, classification_report),
+                      Multispectral PCA (PCA, StandardScaler, make_pipeline)
+    - pandas          REQUIRED by: Multispectral PCA (variance table),
+                      Create Polygons from Table (read CSV/TXT/XLS/XLSX)
+    - openpyxl        REQUIRED by: Raster Zonal Statistics (export .xlsx),
+                      Extract Point Values (export .xlsx),
+                      Classification Report (export .xlsx with charts),
+                      Create Polygons from Table (read .xlsx)
+    - xgboost         (Optional) REQUIRED by: Supervised Classification (XGBoost)
+    - catboost        (Optional) REQUIRED by: Supervised Classification (CatBoost)
+    - earthengine-api REQUIRED by: GEE Descargar Imagenes, GEE Descargar Indices,
+                      GEE Firma Espectral, Descargar MDE
+
+    Install all external dependencies (run once):
+       python -m pip install --upgrade scikit-learn pandas openpyxl xgboost catboost earthengine-api
+
+    Developed and maintained by:
+    Geomatica Ambiental - www.geomatica.pe
+
+    Acknowledgments:
+    - Point Sampling Tool by Borys Jurgiel (GPL v2+) - inspiration for the
+      multi-raster point sampling tool. https://github.com/borysiasty/pointsamplingtool
+
+icon=Icons/logo_geomatica.png
+
+tracker=https://www.geomatica.pe/
+repository=https://www.geomatica.pe/
+homepage=https://www.geomatica.pe/
+category=Raster
+tags=landsat, c2 l1, c2 l2, mss, tm, etm, oli, tirs, dos1, surface reflectance, lst, pansharpening, weighted brovey, brovey, vrt pansharpened, clip raster, cutline, bbox, study area, clipping, sentinel, cbers, pca, ndvi, kmeans, isodata, gmm, birch, supervised classification, decision tree, random forest, extra trees, gradient boosting, naive bayes, mlp, knn, svm, lda, qda, logistic regression, kappa, confusion matrix, balanced accuracy, f1, cross validation, band extraction, band stacking, band combination, multiband, spectral indices, remote sensing, raster, zonal statistics, vector, polygon, csv, xlsx, point sampling
+hasProcessingProvider=yes
+server=False
+experimental=False
+deprecated=False
+
+changelog=1.14.0 - Cambio de nombre a GeoRemote Tools
+    - [General] Se cambió el nombre del plugin de Geomaticape Tools a GeoRemote Tools.
+    - [General] Se actualizó el icono del plugin por un diseño más moderno.
+
+    1.13.0 - Mejoras en herramienta Descargar MDE
+    - [Descarga GEE] Ahora "Descargar MDE" permite usar capas vectoriales (polígonos), aplicar buffer, recortar por la geometría exacta y realizar descargas por lotes organizadas en un directorio.
+    - [Descarga GEE] Se implementó el soporte correcto de NoData transparente para recortes por geometría en MDEs.
+
+    1.12.0 - Actualizacion de Indices Espectrales
+    - [Procesamiento] La herramienta de indices espectrales acepta bandas en formato entero o decimal y procesa el calculo directamente sin alterar sus valores.
+    - [Procesamiento] Correccion de error de formato (f-string) en el registro de log.
+
+    1.11.0 - Nueva herramienta: Indices espectrales - Seleccion multiple
+    - [Procesamiento] Permite marcar varios indices del catalogo existente
+      (NDVI, SAVI, EVI, NDWI, NBR, NDSI, etc.), asignar las bandas una sola
+      vez y generar un GeoTIFF por indice dentro de una carpeta de salida,
+      con reporte de estadisticas opcional (.txt). Los indices a los que
+      les falte una banda asignada se omiten sin detener el resto del lote.
+
+    1.10.1 - Fix ee.Initialize opt_url deprecation; pip --upgrade; clean package
+    - [Processing] Spectral Signature: Landsat 5/7/8/9, Sentinel-2, ASTER L1T
+      Extraction by class, mean/min/max, PNG chart, Excel export
